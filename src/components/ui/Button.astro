@@ -1,0 +1,111 @@
+---
+interface Props {
+  variant?: "primary" | "secondary" | "ghost" | "outline" | "gradient";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  className?: string;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  ariaLabel?: string;
+  dataTrack?: string; // For analytics tracking
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  rel?: string;
+  id?: string;
+  onClick?: string; // For client-side scripts
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  type = "button",
+  className = "",
+  disabled = false,
+  fullWidth = false,
+  ariaLabel,
+  dataTrack,
+  target,
+  rel,
+  id,
+  onClick,
+} = Astro.props;
+
+// Base styles for all buttons
+const baseStyles =
+  "inline-flex items-center justify-center rounded-lg transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-primary-400";
+
+// Variant-specific styles
+const variants = {
+  primary:
+    "bg-primary-600 hover:bg-primary-700 text-white shadow-sm hover:shadow-md dark:bg-primary-500 dark:hover:bg-primary-600",
+  secondary:
+    "bg-secondary-600 hover:bg-secondary-700 text-white shadow-sm hover:shadow-md dark:bg-secondary-500 dark:hover:bg-secondary-600",
+  ghost:
+    "bg-transparent hover:bg-gray-100 text-gray-800 dark:text-gray-200 dark:hover:bg-gray-800",
+  outline:
+    "bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/30",
+  gradient:
+    "bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white shadow-sm hover:shadow-md",
+};
+
+// Size-specific styles
+const sizes = {
+  xs: "px-2.5 py-1.5 text-xs",
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-lg",
+  xl: "px-10 py-5 text-xl",
+};
+
+// Disabled styles
+const disabledStyles = disabled
+  ? "opacity-60 cursor-not-allowed pointer-events-none"
+  : "";
+
+// Full width styles
+const widthStyles = fullWidth ? "w-full" : "";
+
+// Combine all styles
+const combinedStyles = [
+  baseStyles,
+  variants[variant],
+  sizes[size],
+  disabledStyles,
+  widthStyles,
+  className,
+];
+---
+
+{
+  href && !disabled ? (
+    <a
+      href={href}
+      class:list={combinedStyles}
+      aria-label={ariaLabel}
+      data-track={dataTrack}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : rel}
+      id={id}
+      onclick={onClick}
+    >
+      <slot name="icon-left" />
+      <slot />
+      <slot name="icon-right" />
+    </a>
+  ) : (
+    <button
+      type={type}
+      class:list={combinedStyles}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      data-track={dataTrack}
+      id={id}
+      onclick={onClick}
+    >
+      <slot name="icon-left" />
+      <slot />
+      <slot name="icon-right" />
+    </button>
+  )
+}

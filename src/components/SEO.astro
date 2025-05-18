@@ -1,0 +1,93 @@
+---
+import {
+  createCanonicalUrl,
+  generateLocalBusinessSchema,
+  type SEOProps,
+} from "../utils/seo.ts";
+
+interface Props extends SEOProps {}
+
+const {
+  title,
+  description,
+  image = "/images/og-default.jpg",
+  type = "website",
+  canonicalUrl,
+  publishedTime,
+  modifiedTime,
+  author,
+  siteName = "FlooringAI",
+} = Astro.props;
+
+// Create canonical URL safely
+const finalCanonicalUrl =
+  canonicalUrl ||
+  createCanonicalUrl(Astro.url.pathname, Astro.site?.toString());
+
+// Generate structured data
+const structuredData = generateLocalBusinessSchema({
+  title,
+  description,
+  image,
+  type,
+  canonicalUrl: finalCanonicalUrl,
+  siteName,
+});
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={finalCanonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={finalCanonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta
+  property="og:image"
+  content={image.startsWith("http") ? image : `https://flooringai.com${image}`}
+/>
+<meta property="og:site_name" content={siteName} />
+
+{
+  publishedTime && (
+    <meta property="article:published_time" content={publishedTime} />
+  )
+}
+{
+  modifiedTime && (
+    <meta property="article:modified_time" content={modifiedTime} />
+  )
+}
+{author && <meta property="article:author" content={author} />}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={finalCanonicalUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta
+  property="twitter:image"
+  content={image.startsWith("http") ? image : `https://flooringai.com${image}`}
+/>
+
+<!-- Schema.org -->
+<script is:inline type="application/ld+json" set:html={structuredData} />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="format-detection" content="telephone=no" />
+<meta
+  name="theme-color"
+  content="#0092cd"
+  media="(prefers-color-scheme: light)"
+/>
+<meta
+  name="theme-color"
+  content="#003349"
+  media="(prefers-color-scheme: dark)"
+/>

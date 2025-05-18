@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Nathan Dryer Placeholder</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient">
+            <stop stop-color="#004d6e" offset="0%"></stop>
+            <stop stop-color="#0092cd" offset="50%"></stop>
+            <stop stop-color="#3a0e87" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="url(#gradient)" x="0" y="0" width="800" height="800"></rect>
+        <g transform="translate(250, 200)" fill="#FFFFFF">
+            <circle cx="150" cy="100" r="100"></circle>
+            <path d="M150,220 C232.842712,220 300,287.157288 300,370 L0,370 C0,287.157288 67.1572875,220 150,220 Z" fill="#FFFFFF"></path>
+        </g>
+        <text font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="400" y="600">
+            Nathan Dryer
+        </text>
+        <text font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#FFFFFF" text-anchor="middle" x="400" y="640">
+            Founder & Automation Specialist
+        </text>
+    </g>
+</svg>

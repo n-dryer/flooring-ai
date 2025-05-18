@@ -1,0 +1,224 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<Layout
+    title="Contact Us | Schedule Your Free Consultation | FlooringAI"
+    description="Schedule a free consultation with FlooringAI. Learn how our AI automation solutions can help your flooring installation business save time and book more jobs."
+>
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-primary-900 to-primary-950 text-white py-20 md:py-32 overflow-hidden"
+    >
+        <!-- Abstract background shapes -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div
+                    class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-400 rounded-full filter blur-3xl opacity-20 animate-pulse"
+                >
+                </div>
+                <div
+                    class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-secondary-500 rounded-full filter blur-3xl opacity-20 animate-pulse"
+                    style="animation-delay: 2s"
+                >
+                </div>
+                <div
+                    class="absolute top-1/2 right-1/3 w-64 h-64 bg-accent-500 rounded-full filter blur-3xl opacity-20 animate-pulse"
+                    style="animation-delay: 4s"
+                >
+                </div>
+            </div>
+        </div>
+
+        <div class="container relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div
+                    class="inline-block mb-3 px-3 py-1 bg-primary-800/50 rounded-full text-primary-200 text-sm font-medium animate-fade-in-up"
+                >
+                    Free 30-Minute Consultation
+                </div>
+                <h1
+                    class="mb-6 animate-fade-in-up text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight"
+                >
+                    Schedule Your Consultation
+                </h1>
+                <p
+                    class="text-xl md:text-2xl mb-8 text-primary-100 animate-fade-in-up [animation-delay:200ms] leading-relaxed"
+                >
+                    Let's chat about how AI automation can help your flooring
+                    installation businesses save time and book more jobs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-24 bg-neutral-50 dark:bg-neutral-950">
+        <div class="container">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in-up">
+                        <h2 class="mb-6">Get in Touch</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-8">
+                            Fill out the form for a free 15-minute consultation.
+                            We'll discuss your specific business needs and how
+                            our AI automation solutions can help.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="text-blue-600 dark:text-blue-400 mt-1"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-medium mb-1">
+                                        Location
+                                    </h3>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        United States
+                                    </p>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        Serving flooring contractors nationwide
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="text-blue-600 dark:text-blue-400 mt-1"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-medium mb-1">
+                                        Email
+                                    </h3>
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        info@flooringai.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in-up">
+                        <ContactForm
+                            className="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-sm"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white dark:bg-neutral-900">
+        <div class="container">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <div
+                        class="inline-block mb-3 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium"
+                    >
+                        Common Questions
+                    </div>
+                    <h2
+                        class="text-3xl md:text-4xl font-heading font-bold mb-4 text-neutral-900 dark:text-white"
+                    >
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+                <div class="space-y-6 fade-in-up">
+                    <div
+                        class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:shadow-md transition-shadow duration-300"
+                    >
+                        <h3
+                            class="text-xl font-medium mb-2 text-neutral-900 dark:text-white"
+                        >
+                            How long does implementation take?
+                        </h3>
+                        <p class="text-neutral-700 dark:text-neutral-300">
+                            Most of our automation solutions can be implemented
+                            within 1-2 weeks. We handle all the technical setup
+                            so you can focus on your business.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:shadow-md transition-shadow duration-300"
+                    >
+                        <h3
+                            class="text-xl font-medium mb-2 text-neutral-900 dark:text-white"
+                        >
+                            Do I need any technical knowledge?
+                        </h3>
+                        <p class="text-neutral-700 dark:text-neutral-300">
+                            Not at all. We handle all the technical aspects of
+                            implementation and provide training on how to use
+                            the systems we set up.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:shadow-md transition-shadow duration-300"
+                    >
+                        <h3
+                            class="text-xl font-medium mb-2 text-neutral-900 dark:text-white"
+                        >
+                            What's the investment for your services?
+                        </h3>
+                        <p class="text-neutral-700 dark:text-neutral-300">
+                            Our services are customized based on your specific
+                            needs. During our consultation, we'll discuss your
+                            requirements and provide transparent pricing
+                            options.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:shadow-md transition-shadow duration-300"
+                    >
+                        <h3
+                            class="text-xl font-medium mb-2 text-neutral-900 dark:text-white"
+                        >
+                            Do you offer ongoing support?
+                        </h3>
+                        <p class="text-neutral-700 dark:text-neutral-300">
+                            Yes, we provide ongoing support and maintenance to
+                            ensure your automation systems continue to run
+                            smoothly and adapt as your business grows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
